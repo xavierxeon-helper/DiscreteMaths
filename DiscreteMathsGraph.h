@@ -1,10 +1,10 @@
-#ifndef StructureGraphH
-#define StructureGraphH
+#ifndef DiscreteMathsGraphH
+#define DiscreteMathsGraphH
 
-#include "StructureEdge.h"
-#include "StructureVertex.h"
+#include "DiscreteMathsEdge.h"
+#include "DiscreteMathsVertex.h"
 
-namespace Structure
+namespace DiscreteMaths
 {
    class Graph
    {
@@ -31,6 +31,6 @@ namespace Structure
       Vertex::PrtList vertexList;
       Edge::PtrList edgeList;
    };
-} // namespace Structure
+} // namespace DiscreteMaths
 
 #endif // NOT GraphAbstractGraphH

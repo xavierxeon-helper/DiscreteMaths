@@ -1,12 +1,12 @@
-#include "StructureGraph.h"
+#include "DiscreteMathsGraph.h"
 
-Structure::Graph::Graph()
+DiscreteMaths::Graph::Graph()
    : vertexList()
    , edgeList()
 {
 }
 
-int Structure::Graph::addVertex(Vertex* vertex)
+int DiscreteMaths::Graph::addVertex(Vertex* vertex)
 {
    if (vertexList.contains(vertex))
       return -1;
@@ -15,7 +15,7 @@ int Structure::Graph::addVertex(Vertex* vertex)
    return vertexList.count() - 1;
 }
 
-bool Structure::Graph::removeVertex(Vertex* vertex, bool deleteVertex)
+bool DiscreteMaths::Graph::removeVertex(Vertex* vertex, bool deleteVertex)
 {
    if (!vertexList.contains(vertex))
       return false;
@@ -39,7 +39,7 @@ bool Structure::Graph::removeVertex(Vertex* vertex, bool deleteVertex)
    return true;
 }
 
-int Structure::Graph::vertexIndex(const Vertex* constVertex) const
+int DiscreteMaths::Graph::vertexIndex(const Vertex* constVertex) const
 {
    Vertex* vertex = const_cast<Vertex*>(constVertex);
 
@@ -49,12 +49,12 @@ int Structure::Graph::vertexIndex(const Vertex* constVertex) const
    return vertexList.indexOf(vertex);
 }
 
-int Structure::Graph::vertexCount() const
+int DiscreteMaths::Graph::vertexCount() const
 {
    return vertexList.count();
 }
 
-Structure::Vertex* Structure::Graph::getVertex(int vertexIndex) const
+DiscreteMaths::Vertex* DiscreteMaths::Graph::getVertex(int vertexIndex) const
 {
    if (vertexIndex < 0 || vertexIndex >= vertexList.count())
       return nullptr;
@@ -62,7 +62,7 @@ Structure::Vertex* Structure::Graph::getVertex(int vertexIndex) const
    return vertexList.at(vertexIndex);
 }
 
-int Structure::Graph::addEdge(Edge* edge)
+int DiscreteMaths::Graph::addEdge(Edge* edge)
 {
    if (edgeList.contains(edge))
       return -1;
@@ -71,7 +71,7 @@ int Structure::Graph::addEdge(Edge* edge)
    return edgeList.count() - 1;
 }
 
-bool Structure::Graph::removeEdge(Edge* edge, bool deleteEdge)
+bool DiscreteMaths::Graph::removeEdge(Edge* edge, bool deleteEdge)
 {
    if (!edgeList.contains(edge))
       return false;
@@ -84,7 +84,7 @@ bool Structure::Graph::removeEdge(Edge* edge, bool deleteEdge)
    return true;
 }
 
-int Structure::Graph::edgeIndex(const Edge* constEdge) const
+int DiscreteMaths::Graph::edgeIndex(const Edge* constEdge) const
 {
    Edge* edge = const_cast<Edge*>(constEdge);
 
@@ -94,12 +94,12 @@ int Structure::Graph::edgeIndex(const Edge* constEdge) const
    return edgeList.indexOf(edge);
 }
 
-int Structure::Graph::edgeCount() const
+int DiscreteMaths::Graph::edgeCount() const
 {
    return edgeList.count();
 }
 
-Structure::Edge* Structure::Graph::getEdge(int edgeIndex) const
+DiscreteMaths::Edge* DiscreteMaths::Graph::getEdge(int edgeIndex) const
 {
    if (edgeIndex < 0 || edgeIndex >= edgeList.count())
       return nullptr;
@@ -107,7 +107,7 @@ Structure::Edge* Structure::Graph::getEdge(int edgeIndex) const
    return edgeList.at(edgeIndex);
 }
 
-int Structure::Graph::findEdgeIndex(const Vertex* vertexA, const Vertex* vertexB) const
+int DiscreteMaths::Graph::findEdgeIndex(const Vertex* vertexA, const Vertex* vertexB) const
 {
    for (int edgeIndex = 0; edgeIndex < edgeList.count(); edgeIndex++)
    {
@@ -119,7 +119,7 @@ int Structure::Graph::findEdgeIndex(const Vertex* vertexA, const Vertex* vertexB
    return -1;
 }
 
-void Structure::Graph::clear(bool deleteAll)
+void DiscreteMaths::Graph::clear(bool deleteAll)
 {
    if (deleteAll)
    {

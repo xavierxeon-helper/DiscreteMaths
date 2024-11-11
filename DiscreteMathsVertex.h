@@ -1,9 +1,9 @@
-#ifndef StructureVertexH
-#define StructureVertexH
+#ifndef DiscreteMathsVertexH
+#define DiscreteMathsVertexH
 
 #include <QList>
 
-namespace Structure
+namespace DiscreteMaths
 {
    class Vertex
    {
@@ -20,6 +20,6 @@ namespace Structure
    protected:
       QString name;
    };
-} // namespace Structure
+} // namespace DiscreteMaths
 
 #endif // NOT GraphAbstractVertexH

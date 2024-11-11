@@ -1,9 +1,9 @@
-#ifndef StructureEdgeH
-#define StructureEdgeH
+#ifndef DiscreteMathsEdgeH
+#define DiscreteMathsEdgeH
 
 #include <QList>
 
-namespace Structure
+namespace DiscreteMaths
 {
 
    class Vertex;
@@ -39,6 +39,6 @@ namespace Structure
    private:
       friend class Graph;
    };
-} // namespace Structure
+} // namespace DiscreteMaths
 
 #endif // NOT GraphAbstractEdgeH

@@ -1,10 +1,10 @@
-#ifndef StructureAlgorithmH
-#define StructureAlgorithmH
+#ifndef DiscreteMathsAlgorithmH
+#define DiscreteMathsAlgorithmH
 
-#include "StructureEdge.h"
-#include "StructureVertex.h"
+#include "DiscreteMathsEdge.h"
+#include "DiscreteMathsVertex.h"
 
-namespace Structure
+namespace DiscreteMaths
 {
    class Graph;
 
@@ -81,6 +81,6 @@ namespace Structure
       const Graph* graph;
       EdgeData::Matrix edgeMatrix;
    };
-} // namespace Structure
+} // namespace DiscreteMaths
 
 #endif // NOT GraphAbstractAlgorithmH

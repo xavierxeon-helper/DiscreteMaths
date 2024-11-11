@@ -1,10 +1,10 @@
-#include "StructureEdge.h"
+#include "DiscreteMathsEdge.h"
 
 #include <cmath>
 
-const double Structure::Edge::invalidWeight = std::numeric_limits<double>::quiet_NaN();
+const double DiscreteMaths::Edge::invalidWeight = std::numeric_limits<double>::quiet_NaN();
 
-Structure::Edge::Edge(Vertex* vertexA, Vertex* vertexB, const double& weightForward, const double& weightBackward)
+DiscreteMaths::Edge::Edge(Vertex* vertexA, Vertex* vertexB, const double& weightForward, const double& weightBackward)
    : vertexA(vertexA)
    , vertexB(vertexB)
    , weightForward(weightForward)
@@ -12,31 +12,31 @@ Structure::Edge::Edge(Vertex* vertexA, Vertex* vertexB, const double& weightForw
 {
 }
 
-Structure::Edge::~Edge()
+DiscreteMaths::Edge::~Edge()
 {
 }
 
-double Structure::Edge::getForwardWeight() const
+double DiscreteMaths::Edge::getForwardWeight() const
 {
    return weightForward;
 }
 
-double Structure::Edge::getBackwardWeight() const
+double DiscreteMaths::Edge::getBackwardWeight() const
 {
    return weightBackward;
 }
 
-bool Structure::Edge::hasForwardLink() const
+bool DiscreteMaths::Edge::hasForwardLink() const
 {
    return !std::isnan(getForwardWeight());
 }
 
-bool Structure::Edge::hasBackwardLink() const
+bool DiscreteMaths::Edge::hasBackwardLink() const
 {
    return !std::isnan(getBackwardWeight());
 }
 
-bool Structure::Edge::linksVertex(const Vertex* vertex) const
+bool DiscreteMaths::Edge::linksVertex(const Vertex* vertex) const
 {
    if (vertex == vertexA)
       return true;
@@ -46,12 +46,12 @@ bool Structure::Edge::linksVertex(const Vertex* vertex) const
    return false;
 }
 
-const Structure::Vertex* Structure::Edge::getVertexA() const
+const DiscreteMaths::Vertex* DiscreteMaths::Edge::getVertexA() const
 {
    return vertexA;
 }
 
-const Structure::Vertex* Structure::Edge::getVertexB() const
+const DiscreteMaths::Vertex* DiscreteMaths::Edge::getVertexB() const
 {
    return vertexB;
 }

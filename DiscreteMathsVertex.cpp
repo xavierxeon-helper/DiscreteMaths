@@ -1,11 +1,11 @@
-#include "StructureVertex.h"
+#include "DiscreteMathsVertex.h"
 
-Structure::Vertex::Vertex(const QString& name)
+DiscreteMaths::Vertex::Vertex(const QString& name)
    : name(name)
 {
 }
 
-const QString& Structure::Vertex::getName() const
+const QString& DiscreteMaths::Vertex::getName() const
 {
    return name;
 }

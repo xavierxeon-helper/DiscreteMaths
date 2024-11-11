@@ -1,0 +1,36 @@
+cmake_minimum_required(VERSION 3.20)
+project(DiscreteMaths LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_COMPILE_WARNING_AS_ERROR ON)
+
+if(NOT CMAKE_BUILD_TYPE)
+   set(CMAKE_BUILD_TYPE Release CACHE STRING "" FORCE)
+endif()
+
+message(STATUS "CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
+
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+   add_compile_definitions(TEST_CLIENT_AVAILABLE)
+endif()
+
+#
+include_directories(
+   ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+file(GLOB DM_FILES
+   ${CMAKE_CURRENT_SOURCE_DIR}/*.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/*.hpp
+)
+
+#
+find_package(Qt6 REQUIRED COMPONENTS Core)
+
+# set(CMAKE_AUTOMOC ON)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+qt_add_library(${PROJECT_NAME} STATIC ${DM_FILES})
+
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Core)
